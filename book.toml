@@ -1,0 +1,8 @@
+[book]
+authors = ["HungMingWu"]
+language = "zh-tw"
+multilingual = false
+src = "src"
+title = "C/C++編譯器和他的快樂夥伴"
+
+[output.epub]
