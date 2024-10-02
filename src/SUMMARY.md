@@ -10,6 +10,7 @@
         - [Lifetime bounds](compiler/attribute/chap_6.md)
         - [malloc like](compiler/attribute/chap_7.md)
         - [packed](compiler/attribute/chap_8.md)
+        - [diagnose_if (clang only)](compiler/attribute/chap_9.md)
     - [C++ Standard Library]()
         - [libstdc++](compiler/stl/chap_1.md)
         - [libc++](compiler/stl/chap_2.md)
