@@ -1,6 +1,6 @@
-`-Wevenyting`將會提供clang所有的警告，遠超過`-Wall`和`-Wextra`的廢為
+`-Wevenyting`將會提供clang所有的警告，遠超過`-Wall`和`-Wextra`的範圍
 有些警告不太實用
-拿上面的粒子來當範例
+拿上面的例子來當範例
 ``` bash
 $ clang -c test.c -Weverything
 test.c:1:14: warning: unused parameter 'value' [-Wunused-parameter]

@@ -56,7 +56,7 @@ $ ./main
 setup
 ```
 #### About MSVC
-雖然沒有等價於gcc constructor/destructor的東西，不過不代表不能做到類似的叫果
+雖然沒有等價於gcc constructor/destructor的東西，不過不代表不能做到類似的效果
 
  如果要在main之前跟之後執行函數，宣告個static variable即可
  ``` cpp

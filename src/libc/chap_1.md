@@ -1,13 +1,13 @@
-glibc引進了`_FORTIFY_SOURCE`用來捕嘬嚴重的secuity error，例如
+glibc引進了`_FORTIFY_SOURCE`用來捕捉嚴重的secuity error，例如
 ``` c
-#include <stdio.h>  
-#include <string.h>  
-  
-char a[4];  
-  
-int main(int argc, char *argv[]) {  
-  strcpy(a, argv[1]);  
-  puts(a);  
+#include <stdio.h>
+#include <string.h>
+
+char a[4];
+
+int main(int argc, char *argv[]) {
+  strcpy(a, argv[1]);
+  puts(a);
 }
 ```
 要開啟Runtime check有兩個必要條件
@@ -19,4 +19,4 @@ int main(int argc, char *argv[]) {
 
 至於`_FORTIFY_SOURCE`的Level，越大表示檢測能力越強，不過code size跟performance也會受到影響，因此需要斟酌使用
 #### Comparsion between `_FORTIFY_SOURCE` and sanitizers
-`_FORTIFY_SOURCE`能處理的狀況有限，對於Bug的偵測也不如sanitizer．部過他的開銷很小，易於使用
+`_FORTIFY_SOURCE`能處理的狀況有限，對於Bug的偵測也不如sanitizer．不過他的開銷很小，易於使用

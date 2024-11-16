@@ -7,7 +7,7 @@ $ gcc -glevel test.c -c
 - -`g0`：不帶任何debug info，基本上沒用
 - `-g1`：只有極少數的debug info，例如行號，function name等
 - `-g2`:  gcc預設的level，`-g`就等同於`-g2`．包含大部分需要的資訊，例如變數名稱，Data Type等
--  `-g3`: 最詳盡的Level．除了`-g2`的所有妹榮之後．還有macro definition
+-  `-g3`: 最詳盡的Level．除了`-g2`的所有內容之後．還有macro definition
 
 另外還有一個選項
 - `-ggdb`：為gdb生成額外的debug info，不過僅供gdb使用，不能用於lldb

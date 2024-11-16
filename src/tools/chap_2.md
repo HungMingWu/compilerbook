@@ -22,7 +22,7 @@ obj.cpp:5:  Tab found; better to use spaces  [whitespace/tab] [1]
 Done processing obj.cpp
 Total errors found: 5
 ```
-如果有修規則不符合需求的話，用‵`filter`過濾掉
+如果有些規則不符合需求的話，用‵`filter`過濾掉
 就像這樣
 ``` bash
 cpplint --filter -legal/copyright,-build/namespace obj.cpp

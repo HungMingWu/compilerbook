@@ -1,4 +1,4 @@
-在這個方面，由於這非標準，Compilier有不同的考量
+在這個方面，由於這非標準，Compiler有不同的考量
 - gcc有 trampoline
 - clang有blocks
 - MSVC的C語言模式不支持，請用C++的lambda

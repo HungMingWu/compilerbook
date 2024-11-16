@@ -1,4 +1,4 @@
-對於C++ Safety雕求越來越高，所以Compilier也需要偵測出更多的錯誤
+對於C++ Safety要求越來越高，所以Compilier也需要偵測出更多的錯誤
 ### gcc
 #### -Wdangling-pointer
 ``` c

@@ -65,6 +65,6 @@ set_source_files_properties(source1.cxx source2.cxx source3.cxx
 set_source_files_properties(source4.cxx
                             PROPERTIES UNITY_GROUP "bucket2"
 ```
-跟上面的方式差不多，部過
+跟上面的方式差不多，不過
 - 我們現在使用Group Mode
 - 透過`set_source_files_properties`來分類

@@ -1,9 +1,9 @@
-在MSVC裡面，debug info 預設是和object code是分開的，而我們在linux上也可以模擬ˋ類似的操作，以下是我們的測試程式
+在MSVC裡面，debug info 預設是和object code是分開的，而我們在linux上也可以模擬類似的操作，以下是我們的測試程式
 ``` cpp
 #include <iostream>
 
 int main() {
-	std::cout << "Hello, World!" << std::endl; 
+	std::cout << "Hello, World!" << std::endl;
 	return 0;
 }
 ```
@@ -15,7 +15,7 @@ $ g++ test.cpp -o test -g
 ``` bash
 $ objcopy --only-keep-debug test test.dbg
 ```
-將原先的debug info從從executable file抽出來
+將原先的debug info從executable file抽出來
 ``` bash
 $ strip -o test.stripped test
 $ ./test.stripped
