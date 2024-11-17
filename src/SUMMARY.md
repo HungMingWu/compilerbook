@@ -101,4 +101,5 @@
     - [ccache](tools/chap_1.md)
     - [linter](tools/chap_2.md)
     - [CppSafe](tools/chap_3.md)
+    - [Bear/compiledb](tools/chap_4.md)
 - [SUMMARY](SUMMARY.md)
