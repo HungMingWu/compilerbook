@@ -14,4 +14,4 @@ test.c:5:8: warning: variable length array used [-Wvla]
       |               ^~~~
 1 warning generated.
 ```
-不過使否改變還是得視情況而定
+不過是否改變還是得視情況而定

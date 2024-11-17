@@ -5,7 +5,7 @@
 [[malloc]]
 void *my_malloc(size_t size);
 ```
-這告訴Compilier，這個函數索回傳是分配過的Memory，能夠幫助Compiler做進一步的Optimization
+這告訴Compilier，這個函數所回傳是分配過的Memory，能夠幫助Compiler做進一步的Optimization
 ### Ownership (clang only)
 有些時候希望static analyzer能夠幫我們抓出可能的錯誤錯誤
 可以加Ownership的attribute，以下是一個簡單的範例

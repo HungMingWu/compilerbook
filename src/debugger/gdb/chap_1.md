@@ -1,4 +1,4 @@
-雖然gdb之前就有支持script了，不過pytohn提供的功能更齊全，所以用python當script語言更方便
+雖然gdb之前就有支持script了，不過python提供的功能更齊全，所以用python當script語言更方便
 
 gdb裡面就能直接跟python作互動了
 ``` bash
@@ -63,9 +63,9 @@ nop
 ``` bash
 source Nop.py
 ```
-將我們的Command讀取近來
+將我們的Command讀取進來
 接著
-``` 
+```
 help user-defined
 ```
 看到我們新增的command已經列在上面了，最後就執行命令了
@@ -73,5 +73,5 @@ help user-defined
 (gdb) nop
 nop
 ```
-至於要建立更完整的功能，清參照Python和gdb使用文件
+至於要建立更完整的功能，請參照Python和gdb使用文件
 

@@ -1,4 +1,4 @@
-有些時候，我們希望我們的execute file不希望dynamic link道libc當中，這樣我們可以將ubuntu編譯過的檔案，放到centos上跑的需求，這時候就需要static link了
+有些時候，我們希望我們的execute file不希望dynamic link到libc當中，這樣我們可以將ubuntu編譯過的檔案，放到centos上跑的需求，這時候就需要static link了
 範例還是老朋友Hello world
 ``` c
 #include <stdio.h>
