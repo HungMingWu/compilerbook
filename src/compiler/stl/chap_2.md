@@ -35,3 +35,6 @@ libc++測不出問題來，目前clang hardening還在逐漸加強中，所以�
 所以
 - 一段程式最好用兩個以上的編譯器編譯過，避免語法問題
 - 做CI/CD測試的時候，最好能用多個不同的環境設定來交叉測試
+
+#### About Performance
+最近Google Security Team寫了一份[報告](https://security.googleblog.com/2024/11/retrofitting-spatial-safety-to-hundreds.html)，在Production Service下，Performance下降了0.3%，算是可容許的範圍
