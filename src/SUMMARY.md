@@ -95,6 +95,7 @@
 - [libc]()
     - [glibc](libc/chap_1.md)
     - [musl](libc/chap_2.md)
+    - [Cosmopolitan Libc](libc/chap_3.md)
 - [Sanitizer]()
     - [AddressSanitizer](sanitizer/chap_1.md)
     - [UndefinedBehaviorSanitizer](sanitizer/chap_2.md)
