@@ -2,6 +2,7 @@
     - [Intrinsic and builtin function](compiler/chap_1.md)
     - [Nested Functions in C](compiler/chap_2.md)
     - [Statement Expression](compiler/chap_3.md)
+    - [#pragma once](compiler/chap_4.md)
     - [attribute]()
         - [About attribute](compiler/attribute/chap_1.md)
         - [aligned](compiler/attribute/chap_2.md)
