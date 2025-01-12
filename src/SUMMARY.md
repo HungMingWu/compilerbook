@@ -33,6 +33,7 @@
         - [Switch standard library implmentation](compiler/clang/chap_3.md)
         - [Thread Safety Analysis](compiler/clang/chap_4.md)
         - [SafeBuffer](compiler/clang/chap_5.md)
+        - [Dump struct](compiler/clang/chap_6.md)
     - [gcc]()
         - [spec](compiler/gcc/chap_1.md)
     - [MSVC]()
