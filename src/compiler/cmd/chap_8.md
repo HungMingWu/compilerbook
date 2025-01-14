@@ -30,7 +30,11 @@ $ gcc test.c -c -isystem . -Wall -Wextra
 ```
 不過加上`-Wsystem-headers`就跟`-I`有一樣的行為了
 clang在這方面跟gcc完全相同
-
+#### Why it matters
+`-isystem`乍看之下跟`-I`相同，不過當編譯時加上`-Wall`之後，有些許的語意不同
+- 如果產生Warning
+	- 如果是屬於我們自己開發的部分，需要特別注意
+	- 如果是來自於3rd party，可能沒辦法改，所以最好的方法就是忽略，也就是`-isystem`發揮作用的地方
 ### About MSVC
 MSVC的情形，不僅命令不同，對Warning的處理也不同
 拿上面的範例來試試
@@ -46,5 +50,4 @@ $ cl /c test.c /I . /W4
 $ cl /c test.c /external:I . /external:W4
 ```
 如果不想跳出Warning的話，將Warning level調低就可以
-
 
