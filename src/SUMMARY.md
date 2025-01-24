@@ -15,6 +15,7 @@
         - [packed](compiler/attribute/chap_8.md)
         - [diagnose_if (clang only)](compiler/attribute/chap_9.md)
         - [optimize (gcc only)](compiler/attribute/chap_10.md)
+        - [maybe_unused](compiler/attribute/chap_11.md)
     - [C++ Standard Library]()
         - [libstdc++](compiler/stl/chap_1.md)
         - [libc++](compiler/stl/chap_2.md)
