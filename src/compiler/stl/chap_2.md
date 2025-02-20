@@ -38,3 +38,7 @@ libc++測不出問題來，目前clang hardening還在逐漸加強中，所以�
 
 #### About Performance
 最近Google Security Team寫了一份[報告](https://security.googleblog.com/2024/11/retrofitting-spatial-safety-to-hundreds.html)，在Production Service下，Performance下降了0.3%，算是可容許的範圍
+
+#### About Hardening in C++26
+最新的C++26 Meeting，Contract進入標準了，之後的STL Hardening會基於**P3471 Standard Library Hardening**這篇論文，以contract來實施，而目前就是先使用libc++/libstdc++提供的方式來用，到時候再更新
+
