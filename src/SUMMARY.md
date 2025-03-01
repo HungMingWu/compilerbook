@@ -61,6 +61,7 @@
         - [time-trace](compiler/cmd/chap_15.md)
         - [visibility](ompiler/cmd/chap_16.md)
         - [stack-protector](ompiler/cmd/chap_17.md)
+        - [no-access-control](ompiler/cmd/chap_18.md)
         - [About diagnostic](compiler/cmd/diag/about)
             - [-Wall](compiler/cmd/diag/chap_1.md)
             - [-Wextra](compiler/cmd/diag/chap_2.md)
