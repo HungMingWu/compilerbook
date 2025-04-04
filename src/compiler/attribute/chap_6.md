@@ -30,4 +30,27 @@ test.cpp:21:14: warning: temporary bound to local reference 'r' will be destroye
       |              ^~~
 1 warning generated.
 ```
+clang還提供了另一個有用的ifetime attribute
+一個是`lifetime_capture_by`，將一個參數的lifecycle綁到另一個參數上
+
+``` cpp
+void addToSet(std::string_view a [[clang::lifetime_capture_by(s)]], std::set<std::string_view>& s) {
+  s.insert(a);
+}
+void use() {
+  std::set<std::string_view> s;
+  addToSet(std::string(), s); // Warning: object whose reference is captured by 's' will be destroyed at the end of the full-expression.
+  //       ^^^^^^^^^^^^^
+  std::string local;
+  addToSet(local, s); // Ok.
+}
+```
+會出現以下warning
+``` bash
+test.cpp:9:12: warning: object whose reference is captured by 's' will be destroyed at the end of the full-expression [-Wdangling-capture]
+    9 |   addToSet(std::string(), s);
+      |            ^~~~~~~~~~~~~
+1 warning generated.
+
+```
 
