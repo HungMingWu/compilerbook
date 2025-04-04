@@ -32,3 +32,12 @@ add1(int):
 ```
 這個功能有時候很有用，特別是在Debug的時候
 同樣的，C/C++標準的attribute syntax還無法支持這種語法，必須退回gnu的extension syntax
+
+clang也有類似的機制
+``` c
+[[clang::optnone]]
+int add1(int v)
+{
+    return v + 1;
+}
+```
