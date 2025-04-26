@@ -92,6 +92,7 @@
             - [About Dangling](compiler/cmd/diag/chap_27.md)
             - [-Wunsafe-buffer-usage (clang only)](compiler/cmd/diag/chap_28.md)
             - [About diagnostics output (gcc only)](compiler/cmd/diag/chap_29.md)
+            - [-Wunterminated-string-initialization (gcc only)](compiler/cmd/diag/chap_30.md)
 - [cmake]()
     - [Compilation Database](cmake/cmake_1.md)
     - [Difference between  FILE_SET and target_include_directories](cmake/cmake_2.md)
