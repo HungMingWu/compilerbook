@@ -31,3 +31,25 @@ int main()
 	__attribute__((__nonstring__)) char foo[8] = "NUL-free";
 }
 ```
+
+#### About MSVC
+發現MSVC也有類似的功能
+``` powershell
+$ cl test.c /W4
+Microsoft (R) C/C++ Optimizing Compiler Version 19.43.34809 for x64
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+test.c
+test.c(3): warning C4295: 'foo': array is too small to include a terminating null character
+test.c(3): warning C4189: 'foo': local variable is initialized but not referenced
+Microsoft (R) Incremental Linker Version 14.43.34809.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+```
+`Warning C4295`就是我們所關心的，至於抑制方法就有自己的一套了
+``` c
+int main()
+{
+	__pragma(warning(suppress : 4295))  char foo[8] = "NUL-free";
+}
+```
+
