@@ -134,4 +134,5 @@
         - [Visual debugger](tools/website/chap_3.md)
         - [Floating-point converters](tools/website/chap_4.md)
         - [GCC and MSVC C++ Demangler](tools/website/chap_5.md)
+        - [C++ Insights](tools/website/chap_6.md)
 - [SUMMARY](SUMMARY.md)
