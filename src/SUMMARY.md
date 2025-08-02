@@ -41,6 +41,7 @@
         - [Dump struct](compiler/clang/chap_6.md)
     - [gcc]()
         - [spec](compiler/gcc/chap_1.md)
+        - [hardened mode](compiler/gcc/chap_2.md)
     - [MSVC]()
         - [permissive](compiler/msvc/chap_1.md)
         - [Runtime Error Check](compiler/msvc/chap_2.md)
