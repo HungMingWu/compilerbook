@@ -5,6 +5,7 @@
     - [#pragma once](compiler/chap_4.md)
     - [Inline Assembly](compiler/chap_5.md)
     - [Print File/Function Name/Line Number](compiler/chap_6.md)
+    - [Dump Virtual Table and layout](compiler/chap_7.md)
     - [attribute]()
         - [About attribute](compiler/attribute/chap_1.md)
         - [aligned](compiler/attribute/chap_2.md)
