@@ -133,6 +133,7 @@
     - [CppSafe](tools/chap_3.md)
     - [Bear/compiledb](tools/chap_4.md)
     - [Analysing Memory Layout of Structures](tools/chap_5.md)
+    - [3rd party static analyzer](tools/chap_6.md)
     - [website]()
         - [Compiler Explorer](tools/website/chap_1.md)
         - [Decompiler Explorer](tools/website/chap_2.md)
