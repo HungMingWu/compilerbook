@@ -1,4 +1,4 @@
-gcc和clang都提供了static analyzer的功能，不過在指令上不一樣
+三大編譯器都提供了static analyzer的功能，不過在指令上不一樣
 ### Test example
 ``` c
 #include <stdio.h>
@@ -39,6 +39,19 @@ test.c:8:8: warning: Potential leak of memory pointed to by 'i' [unix.Malloc]
       |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 1 warning generated
 ```
-至於分析的結果，就需要更多的實踐跟研究了，不在本文討論之間
+至於msvc
+``` powershell
+$ cl /analyze test.cpp
+Microsoft (R) C/C++ Optimizing Compiler Version 19.44.35213 for x64
+Copyright (C) Microsoft Corporation.  All rights reserved.
 
+test.cpp
+test.cpp(7) : warning C6011: Dereferencing NULL pointer 'i'. : Lines: 6, 7
+Microsoft (R) Incremental Linker Version 14.44.35213.0
+Copyright (C) Microsoft Corporation.  All rights reserved.
+
+/out:test.exe
+test.obj
+```
+至於分析的結果，就需要更多的實踐跟研究了，不在本文討論之間
 
