@@ -106,6 +106,7 @@
     - [Unity build](cmake/cmake_5.md)
     - [CUDA](cmake/cmake_6.md)
     - [Integrate static analyzer](cmake/cmake_7.md)
+    - [Integration Sanitizers](cmake/cmake_8.md)
     - [Real Example]()
         - [Step1, Initialization](cmake/example/example1.md)
         - [Step2. generate config.h and custom inclusion path](cmake/example/example2.md)
