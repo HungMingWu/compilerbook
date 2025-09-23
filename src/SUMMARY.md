@@ -47,6 +47,7 @@
         - [permissive](compiler/msvc/chap_1.md)
         - [Runtime Error Check](compiler/msvc/chap_2.md)
         - [Code analysis](compiler/msvc/chap_3.md)
+        - [volatile](compiler/msvc/chap_4.md)
     - [Useful command]()
         - [-ffast-math](compiler/cmd/chap_1.md)
         - [About Debug Symbol](compiler/cmd/chap_2.md)
