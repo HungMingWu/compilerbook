@@ -130,6 +130,7 @@
     - [AddressSanitizer](sanitizer/chap_1.md)
     - [UndefinedBehaviorSanitizer](sanitizer/chap_2.md)
     - [Thread Sanitizer](sanitizer/chap_3.md)
+    - [fuzzer](sanitizer/chap_4.md)
 - [Tools]()
     - [ccache](tools/chap_1.md)
     - [linter](tools/chap_2.md)
