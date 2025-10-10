@@ -144,6 +144,7 @@
     - [Analysing Memory Layout of Structures](tools/chap_5.md)
     - [3rd party static analyzer](tools/chap_6.md)
     - [bloaty](tools/chap_7.md)
+    - [clang-format](tools/chap_8.md)
     - [website]()
         - [Compiler Explorer](tools/website/chap_1.md)
         - [Decompiler Explorer](tools/website/chap_2.md)
