@@ -105,6 +105,7 @@
             - [About diagnostics output (gcc only)](compiler/cmd/diag/chap_29.md)
             - [-Wunterminated-string-initialization (gcc only)](compiler/cmd/diag/chap_30.md)
             - [-fdiagnostics-text-art-charset (gcc only)](compiler/cmd/diag/chap_31.md)
+            - [About SARIF](compiler/cmd/diag/chap_32.md)
 - [cmake]()
     - [Compilation Database](cmake/chap_1.md)
     - [Difference between  FILE_SET and target_include_directories](cmake/chap_2.md)
