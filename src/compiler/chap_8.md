@@ -78,4 +78,12 @@ $ cl /O2 /GL /std:c++latest main.cpp /link /LTCG:PGOPTIMIZE /PGD:main.pgd
 ```
 編譯器將會根據pgd和多次profile的pgc檔作分析而產生最終executable file
 
+### Advance PGO
+gcc和clang各自有基於Hardware的Profiling機制
+- gcc的叫AutoFDO
+- clang的叫HWPGO
+由於基於硬體，通用性就沒上面的PGO那麼廣泛了，不過可以根據實際硬體做更為激進的最佳化
+列出參考資料
+[AutoFDO tutorial](https://gcc.gnu.org/wiki/AutoFDO/Tutorial)
+[Enabling HW-based PGO](https://llvm.org/devmtg/2024-04/slides/TechnicalTalks/Xiao-EnablingHW-BasedPGO.pdf)
 
