@@ -8,6 +8,7 @@
     - [Dump Virtual Table and layout](compiler/chap_7.md)
     - [PGO](compiler/chap_8.md)
     - [vector extension](compiler/chap_9.md)
+    - [format](compiler/chap_10.md)
     - [attribute]()
         - [About attribute](compiler/attribute/chap_1.md)
         - [aligned](compiler/attribute/chap_2.md)
