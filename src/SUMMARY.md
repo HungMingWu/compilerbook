@@ -119,6 +119,7 @@
     - [CUDA](cmake/chap_6.md)
     - [Integrate static analyzer](cmake/chap_7.md)
     - [Integration Sanitizers](cmake/chap_8.md)
+    - [CMake Presets](cmake/chap_9.md)
     - [Real Example]()
         - [Step1, Initialization](cmake/example/example1.md)
         - [Step2. Pass parameters from CMake to C++](cmake/example/example2.md)
