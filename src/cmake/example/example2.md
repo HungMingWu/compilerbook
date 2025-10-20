@@ -1,6 +1,6 @@
 將原先的程式改成這樣
 ``` cpp
-include <cmath>
+#include <cmath>
 #include <iostream>
 #include <string>
 #include "config.h"
@@ -25,6 +25,8 @@ int main(int argc, char* argv[])
         return 0;
 }
 ```
+#### Old Way：`configure_file`
+這方法是從autotools流傳下來的，對於現代的軟體工程有點過時，最大的問題是不同的設定可能造成ABI Break，不過還是加以介紹
 這邊我們要做的是動態生成`config.h`，因此要先提供一個Template `config.h.in`
 ``` bash
 #pragma once
@@ -81,5 +83,30 @@ target_sources(tutorial
     TYPE HEADERS
     BASE_DIRS ${CMAKE_BINARY_DIR}
     FILES ${CMAKE_BINARY_DIR}/config.h
+)
+```
+
+#### New Way：`target_compile_definitions()`、`option()`
+我們不再使用configure_file，而是直接將參數加到target之中
+首先先移除掉`#include "config.h"`這行
+接著重寫我們的CMakeLists.txt
+``` bash
+cmake_minimum_required(VERSION 3.28)
+project(tutorial)
+add_executable(tutorial)
+target_sources(tutorial
+  PRIVATE
+    tutorial.cxx
+  PRIVATE
+    FILE_SET generate_config
+    TYPE HEADERS
+    BASE_DIRS ${CMAKE_BINARY_DIR}
+    FILES ${CMAKE_BINARY_DIR}/config.h
+)
+target_compile_definitions(tutorial
+  PRIVATE
+    PROJECT_VERSION_MAJOR=1
+    PROJECT_VERSION_MINOR=0
+    AUTHOR_NAME="HungMing"
 )
 ```

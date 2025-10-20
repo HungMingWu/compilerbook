@@ -121,7 +121,7 @@
     - [Integration Sanitizers](cmake/chap_8.md)
     - [Real Example]()
         - [Step1, Initialization](cmake/example/example1.md)
-        - [Step2. generate config.h and custom inclusion path](cmake/example/example2.md)
+        - [Step2. Pass parameters from CMake to C++](cmake/example/example2.md)
         - [Step3.  add_subdirectory](cmake/example/example3.md)
         - [Step4. Install Library](cmake/example/example4.md)
         - [Step5. FetchContent](cmake/example/example5.md)
