@@ -26,6 +26,7 @@ int main(int argc, char* argv[])
 而這是最簡單的CMakeLists.txt內容
 ``` bash
 cmake_minimum_required(VERSION 3.28)
+project(tutorial)
 add_executable(tutorial)
 target_sources(tutorial
   PRIVATE
