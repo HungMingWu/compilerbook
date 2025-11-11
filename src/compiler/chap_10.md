@@ -1,3 +1,4 @@
+看到Linux 6.19可能會加入`-fms-extensions`這個編譯選項，所以有了這一節
 這個Extension是非C語言標準
 雖然是Microsoft C Extensions，不過gcc/clang亦有實作
 在C語言中，已經可以使用`Anonymous Structs / Unions`了
@@ -66,4 +67,20 @@ int main()
 }
 ```
 gcc/clang編譯的時候帶上`-fms-extensions`就可以了
+
+####  One more thing (gcc only)
+其實有比`-fms-extensions`更強大的extension，叫做Plan 9 extension，編譯時使用`-fplan9-extensions`
+他可以接受這樣的程式碼
+``` c
+struct parent { int a; };
+struct child { struct parent; int b; } c;
+void foo(struct parent *) {}
+int main()
+{
+        struct child c;
+        foo(&c);
+}
+```
+這是`-fms-extensions`所不允許的，且只存在於gcc，clang不支援
+不過Linus Torvalds本人是反對的，Kernel 6.19大概只接受微軟的Extension
 
