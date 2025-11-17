@@ -162,4 +162,5 @@
         - [GCC and MSVC C++ Demangler](tools/website/chap_5.md)
         - [C++ Insights](tools/website/chap_6.md)
         - [Compiler implementation status](tools/website/chap_7.md)
+        - [C++ Standard Evolution Viewer](tools/website/chap_8.md)
 - [SUMMARY](SUMMARY.md)
