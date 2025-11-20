@@ -70,7 +70,39 @@ Shape::draw this adjustor: 0
 Shape::__delDtor this adjustor: 0
 Shape::__vecDelDtor this adjustor: 0
 ```
-
+#### One more thing
+gdb也可以印出virtual table，不過必須是一個expression，也就是需要產生一個真實的物件
+改寫上面的程式碼
+``` cpp
+class Shape {
+public:
+        virtual ~Shape() = default;
+        virtual void draw() = 0;
+};
+class Circle : public Shape {
+public:
+        void draw() override {}
+};
+int main()
+{
+        Circle c;
+        Shape *ptr = &c;
+        return 0;
+}
+```
+在跑到
+``` cpp
+        Shape *ptr = &c;
+```
+後，在gdb下
+``` bash
+(gdb) info vtbl ptr
+vtable for 'Shape' @ 0x402018 (subobject @ 0x7fffffffe150):
+[0]: 0x4011ba <Circle::~Circle()>
+[1]: 0x4011e2 <Circle::~Circle()>
+[2]: 0x40116a <Circle::draw()>
+```
+可以看到類似的結果
 
 #### Reference
 [Dump C/C++ vtable & record layout information (clang + msvc + gcc)](https://gist.github.com/GavinRay97/700ff1631d7e5ac460efd0780759c908)
