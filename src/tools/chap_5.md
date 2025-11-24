@@ -3,7 +3,7 @@
 `pahole`在unix系統就是很方便的工具之一
 以下是範例程式，程式碼本身沒什麼特別的
 ``` c
-struct sample {
+truct sample {
         char a[2];
         long l;
         int i;
@@ -11,16 +11,11 @@ struct sample {
         short s;
 };
 
-void test(struct sample*)
-{
-}
-
 int main()
 {
-        test(nullptr);
+        sample s;
         return 0;
 }
-
 ```
 不過編譯的時候記得帶debug symbol
 ``` bash
@@ -65,10 +60,28 @@ $ clang -cc1 -fdump-record-layouts test.cpp
            | [sizeof=40, dsize=40, align=8,
            |  nvsize=40, nvalign=8]
 ```
-不過跟印出virtual table一樣，實際的程式如果沒有參考到這個structure，clang不會印出，可以試著把` test(nullptr)`拿掉再跑一次
+不過跟印出virtual table一樣，實際的程式如果沒有參考到這個structure，clang不會印出，可以試著把` sample s`拿掉再跑一次
 #### msvc
 至於Visual Studio，Command Line沒有提供類似的功能，不過IDE有，需要的話使用IDE吧
 
+#### One mor thing
+用gdb也能印出structure layout，跑到`sample s`這行時使用`ptye /o (expression)`
+``` bash
+(gdb) ptype /o &s
+type = struct sample {
+/*      0      |       2 */    char a[2];
+/* XXX  6-byte hole      */
+/*      8      |       8 */    long l;
+/*     16      |       4 */    int i;
+/* XXX  4-byte hole      */
+/*     24      |       8 */    void *p;
+/*     32      |       2 */    short s;
+/* XXX  6-byte padding   */
+
+                               /* total size (bytes):   40 */
+                             } *
+```
+可以印出我們的structure layout
 #### Reference
 - [Poke-a-hole and friends](https://lwn.net/Articles/335942/)
 - [Size, Alignment, and Memory Layout Insights for C++ Classes, Structs, and Unions](https://devblogs.microsoft.com/visualstudio/size-alignment-and-memory-layout-insights-for-c-classes-structs-and-unions/)

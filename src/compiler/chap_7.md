@@ -135,17 +135,5 @@ vtable for 'Shape' @ 0x402018 (subobject @ 0x7fffffffe150):
 [2]: 0x40116a <Circle::draw()>
 ```
 可以看到類似的結果
-而
-``` bash
-(gdb) ptype /o ptr
-type = class Shape {
-/*      8      |       4 */    int v;
-/* XXX  4-byte padding   */
-
-                               /* total size (bytes):   16 */
-                             } *
-
-```
-可以印出我們的structure layout
 #### Reference
 [Dump C/C++ vtable & record layout information (clang + msvc + gcc)](https://gist.github.com/GavinRay97/700ff1631d7e5ac460efd0780759c908)
