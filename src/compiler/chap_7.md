@@ -3,12 +3,19 @@
 以下是我們的範例程式
 ``` cpp
 class Shape {
+        int v;
 public:
         virtual ~Shape() = default;
         virtual void draw() = 0;
 };
+class Circle : public Shape {
+public:
+        void draw() override {}
+};
 int main()
 {
+        Circle c;
+        Shape *ptr = &c;
         return 0;
 }
 ```
@@ -28,26 +35,69 @@ Shape::_ZTV5Shape: 5 entries
 32    (int (*)(...))__cxa_pure_virtual
 
 Class Shape
-   size=8 align=8
-   base size=8 base align=8
-Shape (0x0x770167dd5000) 0 nearly-empty
+   size=16 align=8
+   base size=12 base align=8
+Shape (0x0x7e7be27d5000) 0
     vptr=((& Shape::_ZTV5Shape) + 16)
+
+Vtable for Circle
+Circle::_ZTV6Circle: 5 entries
+0     (int (*)(...))0
+8     (int (*)(...))(& _ZTI6Circle)
+16    (int (*)(...))Circle::~Circle
+24    (int (*)(...))Circle::~Circle
+32    (int (*)(...))Circle::draw
+
+Class Circle
+   size=16 align=8
+   base size=12 base align=8
+Circle (0x0x7e7be260e270) 0
+    vptr=((& Circle::_ZTV6Circle) + 16)
+Shape (0x0x7e7be27d5120) 0
+      primary-for Circle (0x0x7e7be260e270)
+
 ```
 #### clang
-Clang得到的輸出反而最沒用，不過還是紀錄一下
+Clang也能輸出virtual table的 Layout，使用以下方式
 ``` bash
-$ clang -cc1 -fdump-record-layouts test.cpp > test.txt
+$ clang -Xclang -fdump-vtable-layouts test.cpp
 ```
-
+輸出的結果類似這樣
 ``` bash
-*** Dumping AST Record Layout
-         0 | class Shape
-         0 |   (Shape vtable pointer)
-           | [sizeof=8, dsize=8, align=8,
-           |  nvsize=8, nvalign=8]
+Original map
+ void Circle::draw() -> void Shape::draw()
+ Circle::~Circle() -> Shape::~Shape()
+Vtable for 'Circle' (5 entries).
+   0 | offset_to_top (0)
+   1 | Circle RTTI
+       -- (Circle, 0) vtable address --
+       -- (Shape, 0) vtable address --
+   2 | Circle::~Circle() [complete]
+   3 | Circle::~Circle() [deleting]
+   4 | void Circle::draw()
+
+VTable indices for 'Circle' (3 entries).
+   0 | Circle::~Circle() [complete]
+   1 | Circle::~Circle() [deleting]
+   2 | void Circle::draw()
+
+Original map
+ void Circle::draw() -> void Shape::draw()
+ Circle::~Circle() -> Shape::~Shape()
+Vtable for 'Shape' (5 entries).
+   0 | offset_to_top (0)
+   1 | Shape RTTI
+       -- (Shape, 0) vtable address --
+   2 | Shape::~Shape() [complete]
+   3 | Shape::~Shape() [deleting]
+   4 | void Shape::draw() [pure]
+
+VTable indices for 'Shape' (3 entries).
+   0 | Shape::~Shape() [complete]
+   1 | Shape::~Shape() [deleting]
+   2 | void Shape::draw()
 
 ```
-
 #### msvc
 ``` powershell
 cl.exe test.cpp /d1reportAllClassLayout > test.txt
@@ -72,27 +122,6 @@ Shape::__vecDelDtor this adjustor: 0
 ```
 #### One more thing
 gdb也可以印出virtual table和structure layout
-不過必須是一個expression，也就是需要產生一個真實的物件
-改寫上面的程式碼
-``` cpp
-class Shape {
-        int v;
-public:
-        virtual ~Shape() = default;
-        virtual void draw() = 0;
-};
-class Circle : public Shape {
-public:
-        void draw() override {}
-};
-int main()
-{
-        Circle c;
-        Shape *ptr = &c;
-        return 0;
-}
-
-```
 在跑到這行後
 ``` cpp
         Shape *ptr = &c;
@@ -118,7 +147,5 @@ type = class Shape {
 
 ```
 可以印出我們的structure layout
-``
-
 #### Reference
 [Dump C/C++ vtable & record layout information (clang + msvc + gcc)](https://gist.github.com/GavinRay97/700ff1631d7e5ac460efd0780759c908)

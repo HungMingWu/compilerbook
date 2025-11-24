@@ -14,6 +14,13 @@ struct sample {
 void test(struct sample*)
 {
 }
+
+int main()
+{
+        test(nullptr);
+        return 0;
+}
+
 ```
 不過編譯的時候記得帶debug symbol
 ``` bash
@@ -42,6 +49,24 @@ struct sample {
 };
 ```
 更複雜的使用參照Reference Link
+如果不用pahole的話，clang和MSVC各有方式達成類似的功能
+#### clang
+clang可以透過`-cc1 -fdump-record-layouts`來達成
+``` bash
+$ clang -cc1 -fdump-record-layouts test.cpp
+
+*** Dumping AST Record Layout
+         0 | struct sample
+         0 |   char[2] a
+         8 |   long l
+        16 |   int i
+        24 |   void * p
+        32 |   short s
+           | [sizeof=40, dsize=40, align=8,
+           |  nvsize=40, nvalign=8]
+```
+不過跟印出virtual table一樣，實際的程式如果沒有參考到這個structure，clang不會印出，可以試著把` test(nullptr)`拿掉再跑一次
+#### msvc
 至於Visual Studio，Command Line沒有提供類似的功能，不過IDE有，需要的話使用IDE吧
 
 #### Reference

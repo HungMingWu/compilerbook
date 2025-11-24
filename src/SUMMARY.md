@@ -5,7 +5,7 @@
     - [#pragma once](compiler/chap_4.md)
     - [Inline Assembly](compiler/chap_5.md)
     - [Print File/Function Name/Line Number](compiler/chap_6.md)
-    - [Dump Virtual Table and layout](compiler/chap_7.md)
+    - [Dump Virtual Table](compiler/chap_7.md)
     - [PGO](compiler/chap_8.md)
     - [vector extension](compiler/chap_9.md)
     - [Anonymous Structs/Unions](compiler/chap_10.md)
