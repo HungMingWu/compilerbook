@@ -9,6 +9,7 @@
     - [PGO](compiler/chap_8.md)
     - [vector extension](compiler/chap_9.md)
     - [Anonymous Structs/Unions](compiler/chap_10.md)
+    - [Checked-size array parameters in C](compiler/chap_11.md)
     - [attribute]()
         - [About attribute](compiler/attribute/chap_1.md)
         - [aligned](compiler/attribute/chap_2.md)
