@@ -166,4 +166,5 @@
         - [Compiler implementation status](tools/website/chap_7.md)
         - [C++ Standard Evolution Viewer](tools/website/chap_8.md)
         - [cdecl](tools/website/chap_9.md)
+        - [SIMD.info](tools/website/chap_10.md)
 - [SUMMARY](SUMMARY.md)
