@@ -27,6 +27,7 @@
         - [const and pure](compiler/attribute/chap_13.md)
         - [format](compiler/attribute/chap_14.md)
         - [inline and artificial](compiler/attribute/chap_15.md)
+        - [Tail Call Optimization](compiler/attribute/chap_16.md)
     - [C++ Standard Library]()
         - [libstdc++](compiler/stl/chap_1.md)
         - [libc++](compiler/stl/chap_2.md)
