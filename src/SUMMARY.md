@@ -11,6 +11,7 @@
     - [Anonymous Structs/Unions](compiler/chap_10.md)
     - [Checked-size array parameters in C](compiler/chap_11.md)
     - [range extension (gcc/clang)](compiler/chap_12.md)
+    - [inline](compiler/chap_13.md)
     - [attribute]()
         - [About attribute](compiler/attribute/chap_1.md)
         - [aligned](compiler/attribute/chap_2.md)
