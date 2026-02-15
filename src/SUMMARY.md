@@ -54,6 +54,7 @@
         - [SafeBuffer](compiler/clang/chap_5.md)
         - [Dump struct](compiler/clang/chap_6.md)
         - [module](compiler/clang/chap_7.md)
+        - [defer](compiler/clang/chap_8.md)
     - [gcc]()
         - [spec](compiler/gcc/chap_1.md)
         - [hardened mode](compiler/gcc/chap_2.md)
